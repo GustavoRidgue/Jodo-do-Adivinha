@@ -3,97 +3,162 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Jogos Aleatórios</title>
+	<title>AleatóJogos - Home</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark meu-navbar">
-			<a class="navbar-brand" href="#">Jogos Aleatórios</a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-		    <ol class="navbar-nav">
-		      <li class="nav-item padding-lista-navbar">
-		        <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
-		      </li>
-		      <li class="nav-item dropdown active padding-lista-navbar">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          Jogos
-			        </a>
-			        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-			          <a class="dropdown-item active text-white nav-hover" href="#">Jogo do Adivinha</a>
-			          <a class="dropdown-item text-white nav-hover" href="#">Jogo da Forca</a>
-			          <a class="dropdown-item text-white nav-hover" href="#">Jogo do Dado</a>
-			          <div class="dropdown-divider"></div>
-			          <a class="dropdown-item text-white nav-hover" href="#">Mais Jogos</a>
-			        </div>
-			    </li>
-			    <li class="nav-item dropdown active padding-lista-navbar">
-			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			          Dificuldade
-			        </a>
-			        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-			          <a class="dropdown-item active text-white nav-hover" href="#">Fácil</a>
-			          <a class="dropdown-item text-white nav-hover" href="#">Médio</a>
-			          <a class="dropdown-item text-white nav-hover" href="#">Difícil</a>
-			          <div class="dropdown-divider"></div>
-			          <a class="dropdown-item text-white nav-hover" href="#">Intenso</a>
-			        </div>
-			    </li>
-		      <li class="nav-item padding-lista-navbar">
-			      <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Sobre Nós</a>
-			    </li>
-			    <li class="nav-item padding-lista-navbar">
-			      <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Mais</a>
-			    </li>
-		    </ol>
-		  </div>
+		<nav class="navbar navbar-expand-lg navbar-dark meu-navbar pr-4 pl-4">
+			<a class="navbar-brand" href="#">
+				<img src="./img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+			</a>
+			<a class="navbar-brand" href="#">AleatóJogos</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end">
+				<ol class="navbar-nav">
+					<li class="nav-item padding-lista-navbar active mr-2 ml-2 mb-2 mt-2">
+						<a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item dropdown mr-2 ml-2 mb-2 mt-2 padding-lista-navbar">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Jogos
+						</a>
+						<div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item text-white nav-hover" href="jogo-adivinha-facil.html">Jogo do Adivinha</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item text-white nav-hover" href="#">Mais Jogos</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown mr-2 ml-2 mb-2 mt-2 padding-lista-navbar">
+						<a class="nav-link dropdown-toggle disabled " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Dificuldade
+						</a>
+						<div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item text-white nav-hover disabled" href="#">Fácil</a>
+							<a class="dropdown-item text-white nav-hover disabled" href="#">Médio</a>
+							<a class="dropdown-item text-white nav-hover disabled" href="#">Difícil</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item text-white nav-hover disabled" href="#">Configurações</a>
+						</div>
+					</li>
+					<li class="nav-item padding-lista-navbar  mr-2 ml-2 mb-2 mt-2">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Sobre Nós</a>
+					</li>
+					<li class="nav-item padding-lista-navbar mr-2 ml-2 mb-2 mt-2">
+						<a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Mais</a>
+					</li>
+				</ol>
+			</div>
 		</nav>
 	</header>
-	<section id="titulo" class="text-center titulo-subtitulo">
-		<h1 class="text-primary">Jogo Do Adivinha</h1>
-		<h2 class="text-secondary">Teste a sua sorte com o jogo do adivinha</h2>
-	</section>
-	<section id="descricao" class="text-info text-center info">
-		<p>O jogo funciona da seguinte maneira:<br></p>
-		<ul class="lista-regra">
-			<li>O seu computador irá sortear um número aleatório de 0 à 100;</li>
-			<li>Você terá que tentar adivinhar o número;</li>
-			<li><strong>Lembre-se: </strong>Você terá apenas 10 tentativas;</li>
-			<li>E para finalizar, <strong>aproveite!</strong></li>
-		</ul>		
-	</section>
 
-	<article class="text-center"></article>
-		<section id="jogo">
-			<form action="#" method="post" class="chute text-center">
-			  <div class="form-group">
-			    <label for="input-envio" id="textonIner">Digite o número em sua cabeça</label>
-			    <input type="number" class="form-input" id="inputEnvio" name="enviar">
-			  </div>
-			  <button type="button" class="btn btn-primary" onclick="return adivinha()" id="buttonEnvio">Tentar</button>
-			</form>
-			
-			<h3 class="text-white mt-3" id="tentativaRestante">Tentativas restantes: 10</h3>
-			<div id="jogarNovamente"></div>
+	<article>
+		<section class="text-center" id="titulo">
+			<div class="titulo mt-4 mb-4">
+				<table class="d" align='center'>
+					<tr align='center displa-flex'>
+						<td align='center'><img src="img/logo.png" class="img-titulo"></td>
+						<td align='center'><h1 class="text-primary ml-1"> AleatóJogos</h1></td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<h3 class="text-secondary">Se você procura diversão, então está no lugar certo!</h3>
+			</div>
+		</section>
+		<section id="introducao">
+			<div class="text-center mt-4 mb-5">
+				<p class="text-light">
+					Bem vindo à página AleatóJogos <br>
+					Está página está focada em entreterimento. Aqui você verá diversos jogos para se divertir! <br>
+				</p>
+			</div>
+		</section>
+		<section>
+			<h2 class="text-primary text-center mb-5">Veja nossos jogos:</h2>
+
+			<section id="jogos" class="container">
+				<div class="row justify-content-center">
+					<section class="card largura bg-dark col-12 col-md-4 m-4">
+						<div class="">
+							<img src="img/card1-jogo-adivinha.png" class="card-img-top img-jogos" alt="...">
+							<div class="card-body text-center">
+								<h5 class="card-title text-primary ">Jogo do Adivinha</h5>
+								<p class="card-text text-light">Teste sua sorte no jogo do adivinha! <br> Nele, sortearemos um número e você terá apenas algumas tentativas para adivinha-lo</p>
+								<a href="jogo-adivinha-facil.html" class="btn btn-primary">Jogar</a>
+							</div>
+						</div>
+					</section>
+
+					<section class="card largura bg-dark col-12 col-md-4 m-4">
+						<div class="">
+							<img src="img/cards-reticencias-2.png" class="card-img-top img-jogos" alt="hjbjidbjh">
+							<div class="card-body text-center">
+								<h5 class="card-title text-primary">Título do Jogo</h5>
+								<p class="card-text text-light">Novos jogos serão lançados em breve.<br> <a href="#">Click aqui</a> para se manter atualizado ou visite nosso site: <a href="#">https://www.aleatojogos.com</a></p>
+								<a href="#" class="btn btn-primary disabled">Jogar</a>
+							</div>
+						</div>
+					</section>
+
+					<section class="card largura bg-dark col-12 col-md-4 m-4">
+						<div class="">
+							<img src="img/cards-reticencias-2.png" class="card-img-top img-jogos" alt="...">
+							<div class="card-body text-center">
+								<h5 class="card-title text-primary">Título do Jogo</h5>
+								<p class="card-text text-light">Novos jogos serão lançados em breve.<br> <a href="#">Click aqui</a> para se manter atualizado ou visite nosso site: <a href="#">https://www.aleatojogos.com</a></p>
+								<a href="#" class="btn btn-primary disabled">Jogar</a>
+							</div>
+						</div>
+					</section>
+
+					<section class="card largura bg-dark col-12 col-md-4 m-4">
+						<div class="">
+							<img src="img/cards-reticencias-2.png" class="card-img-top img-jogos" alt="...">
+							<div class="card-body text-center ">
+								<h5 class="card-title text-primary">Título do Jogo</h5>
+								<p class="card-text text-light">Novos jogos serão lançados em breve.<br> <a href="#">Click aqui</a> para se manter atualizado ou visite nosso site: <a href="#">https://www.aleatojogos.com</a></p>
+								<a href="#" class="btn btn-primary disabled">Jogar</a>
+							</div>
+						</div>
+					</section>
+
+					<section class="card largura bg-dark col-12 col-md-4 m-4">
+						<div class="">
+							<img src="img/cards-reticencias-2.png" class="card-img-top img-jogos" alt="...">
+							<div class="card-body text-center">
+								<h5 class="card-title text-primary">Título do Jogo</h5>
+								<p class="card-text text-light">Novos jogos serão lançados em breve.<br> <a href="#">Click aqui</a> para se manter atualizado ou visite nosso site: <a href="#">https://www.aleatojogos.com</a></p>
+								<a href="#" class="btn btn-primary disabled">Jogar</a>
+							</div>
+						</div>
+					</section>
+
+					<section class="card largura bg-dark col-12 col-md-4 m-4">
+						<div class="">
+							<img src="img/cards-reticencias-2.png" class="card-img-top img-jogos" alt="...">
+							<div class="card-body text-center">
+								<h5 class="card-title text-primary">Título do Jogo</h5>
+								<p class="card-text text-light">Novos jogos serão lançados em breve.<br> <a href="#">Click aqui</a> para se manter atualizado ou visite nosso site: <a href="#">https://www.aleatojogos.com</a></p>
+								<a href="#" class="btn btn-primary disabled">Jogar</a>
+							</div>
+						</div>
+					</section>
+				</div>
+				
+			</section>
 		</section>
 	</article>
 
-	<!-- h1>olá mundo</h1>
-	<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Mostrar</button>
-	<div id="demo" class="collapse">
-		<h2>eu tava escondido</h2>
-		<p>*nós estavamos</p>
-	</div> -->
 
-	
-	
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-	<script src="javascript/js"></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
