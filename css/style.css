@@ -1,57 +1,26 @@
 body {
 	background-color: #363636	;
-	background-image: url("../img/ponto-interrogacao2.png");
-	line-height: 2em;
-	text-align: center;
 }
 
-.meu-navbar {
-	padding-right: 30px;
-	padding-left: 30px;
+.meu-navbar, .nav-hover:hover {
 	background-color: #1C1C1C;
 }
 
-.nav-hover:hover {
-   background-color: #bb7cfe;
-}
-
-.padding-lista-navbar {
-	padding-right: 10px;
-	padding-left: 10px;
-}
-
-.titulo-subtitulo {
-	padding: 20px 0;
-	font-size: 1.2em;
+.img-titulo {
+	width: 85px;
+	height: 85px;
+	display: inline-block;
 }
 
 h1 {
-	font-size: 3.5em;
+	font-size: 3em;
 }
 
-.info {
-	font-size: 1.3em;
+.largura {
+	max-width: 18rem;
+	border-color: 	#1C1C1C;
 }
 
-.lista-regra {
-	list-style: none;
-	/*text-align: left*/
-}
-
-.chute label {
-	display: block;
-	color: white;
-	font-size: 1.2em;
-}
-
-
-.chute input {
-	background-color: #1C1C1C	;
-	color: white;
-	text-align: center;
-	border-color: black;
-}
-
-.hideteste {
-
+.img-jogos {
+	object-fit: cover;
 }
