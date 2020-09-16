@@ -1,8 +1,53 @@
-function esconder(valor) {
+function esconderFacil(valor) {
+  if (valor == 0 || valor < 0) {
+    document.querySelector("#textonIner").innerHTML = 
+    "<h3 style='color:red'>Fim De Jogo! O número pesado era " + numSorteadFacil + "</h3>";
+
+    document.querySelector("#tentativaRestante").innerHTML = 
+    "<a class='btn btn-success' value='Refresh Page' onClick='window.location.reload()'>Jogar novamente</a>";
+
+    document.querySelector("#inputEnvio").style.display = 'none';
+
+    document.querySelector("#buttonEnvio").style.display = 'none';
+  }
+
+  else if (valor > 0 && valor < 6) {
+    document.querySelector("#tentativaRestante").innerHTML = "<h3 class='text-danger' >Tentativas restantes: " + valor + "</h3>";
+  }
+  
+  else {
+    document.querySelector("#tentativaRestante").innerHTML = "Tentativas restantes: " + valor;
+  }
+}
+
+function esconderMedio(valor) {
   // var tentativa = 10;
   if (valor == 0 || valor < 0) {
     document.querySelector("#textonIner").innerHTML = 
-    "<h3 style='color:red'>Fim De Jogo! O número pesado era " + numSorteado + "</h3>";
+    "<h3 style='color:red'>Fim De Jogo! O número pesado era " + numSorteadoMedio + "</h3>";
+
+    document.querySelector("#tentativaRestante").innerHTML = 
+    "<a class='btn btn-success' value='Refresh Page' onClick='window.location.reload()'>Jogar novamente</a>";
+
+    document.querySelector("#inputEnvio").style.display = 'none';
+
+    document.querySelector("#buttonEnvio").style.display = 'none';
+  }
+
+  else if (valor > 0 && valor < 6) {
+    document.querySelector("#tentativaRestante").innerHTML = "<h3 class='text-danger' >Tentativas restantes: " + valor + "</h3>";
+  }
+  
+  else {
+    document.querySelector("#tentativaRestante").innerHTML = "Tentativas restantes: " + valor;
+  }
+}
+
+function esconderDificil(valor) {
+  // var tentativa = 10;
+  if (valor == 0 || valor < 0) {
+    document.querySelector("#textonIner").innerHTML = 
+    "<h3 style='color:red'>Fim De Jogo! O número pesado era " + numSorteadoDificil + "</h3>";
 
     document.querySelector("#tentativaRestante").innerHTML = 
     "<a class='btn btn-success' value='Refresh Page' onClick='window.location.reload()'>Jogar novamente</a>";
@@ -31,28 +76,28 @@ inputEnvio.addEventListener('click', function (e){
   e.preventDefault();
 });
 
-var tentativas = 9;
-var numSorteado = Math.round(Math.random() * 100);
+var tentativasFacil = 9;
+var numSorteadoFacil = Math.round(Math.random() * 100);
 
 function adivinhaFacil() {
-  console.log(numSorteado);
+  console.log(numSorteadoFacil);
   var input = document.getElementById("inputEnvio");
-  if (input.value == numSorteado) {
-    document.querySelector("#textonIner").innerHTML = "<h3 class='text-success'>Parabéns, você acertou! O número era " + numSorteado + "</h3>";
+  if (input.value == numSorteadoFacil) {
+    document.querySelector("#textonIner").innerHTML = "<h3 class='text-success'>Parabéns, você acertou! O número era " + numSorteadoFacil + "</h3>";
     document.querySelector("#jogarNovamente").innerHTML = "<a class='btn btn-success mt-3' value='Refresh Page' onClick='window.location.reload()'>Jogar novamente</a>";
     document.querySelector("#inputEnvio").style.display = 'none';
     document.querySelector("#buttonEnvio").style.display = 'none';
     return;
   } 
-  else if (input.value < numSorteado) {
+  else if (input.value < numSorteadoFacil) {
     document.querySelector("#textonIner").innerHTML = "<span class='text-warning'>Pense em um número maior</span>";
-    esconder(tentativas--);
+    esconderFacil(tentativasFacil--);
     input.focus();
     input.value = "";
   }
-  else if (input.value > numSorteado){
+  else if (input.value > numSorteadoFacil){
     document.querySelector("#textonIner").innerHTML = "<span class='text-warning'>Pense em um número menor</span>";
-    esconder(tentativas--);
+    esconderFacil(tentativasFacil--);
     input.focus();
     input.value = "";
   }
@@ -73,13 +118,13 @@ function adivinhaMedio() {
   } 
   else if (input.value < numSorteadoMedio) {
     document.querySelector("#textonIner").innerHTML = "<span class='text-warning'>Pense em um número maior</span>";
-    esconder(tentativasMedio--);
+    esconderMedio(tentativasMedio--);
     input.focus();
     input.value = "";
   }
   else if (input.value > numSorteadoMedio){
     document.querySelector("#textonIner").innerHTML = "<span class='text-warning'>Pense em um número menor</span>";
-    esconder(tentativasMedio--);
+    esconderMedio(tentativasMedio--);
     input.focus();
     input.value = "";
   }
@@ -100,226 +145,16 @@ function adivinhaDificil() {
   } 
   else if (input.value < numSorteadoDificil) {
     document.querySelector("#textonIner").innerHTML = "<span class='text-warning'>Pense em um número maior</span>";
-    esconder(tentativasDificil--);
+    esconderDificil(tentativasDificil--);
     input.focus();
     input.value = "";
   }
   else if (input.value > numSorteadoDificil){
     document.querySelector("#textonIner").innerHTML = "<span class='text-warning'>Pense em um número menor</span>";
-    esconder(tentativasDificil--);
+    esconderDificil(tentativasDificil--);
     input.focus();
     input.value = "";
   }
 }
 
  
-
-
-// function adivinha() {
-//   console.log(numSorteado);
-  // var input = document.getElementById("inputEnvio");
-
-//   if (tentativas <= 3) {
-//     tentativas--;
-//     if (input.value == numSorteado) {
-//       alert("Parabéns, você acertou!");
-//     } 
-//     else if (input.value < numSorteado) {
-//       alert("Chute um número mais alto. Tentativas restantes: " + tentativas);
-//       esconder(tentativas--);
-//     }
-//     else if (input.value > numSorteado){
-//       alert("Chute um número mais baixo. Tentativas restantes: " + tentativas);
-//       esconder(tentativas--);
-//     }
-//   }
-// }
-
-
-
-  // var numeroPensado = Math.round(Math.random() * 10);
-  //   console.log(numeroPensado);
-  //   var tentativaAtual = 3;
-
-  //   var chute = parseInt(prompt("Digite um número"));
-
-  //   if (chute == numeroPensado) {
-  //     alert("Parabéns, você acertou!");
-  //   } 
-  //   else {
-  //     tentativaAtual = tentativaAtual - 1;
-  //     alert("Não foi desta vez. Tentativas restantes: " + tentativaAtual);
-  //     chute = parseInt(prompt("Digite um número"));
-  //     if (chute == numeroPensado) {
-  //       alert("Parabéns, você acertou!");
-  //     }
-  //     else {
-  //       tentativaAtual = tentativaAtual - 1;
-  //       alert("Não foi desta vez. Tentativas restantes: " + tentativaAtual);
-  //       chute = parseInt(prompt("Digite um número"));
-  //       if (chute == numeroPensado) {
-  //         alert("Parabéns, você acertou!");
-  //       } 
-  //       else {
-  //         alert("Game Over! O número pensado era " + numeroPensado);
-  //       }
-  //     }  
-  //   }  
-  
-
- // function certo() {
-
-  // }
-
-  // function errado() {
-
-  // }
-  
-  // function adivinha() {
-  //   var numeroPensado = Math.round(Math.random() * 10);
-  //   console.log(numeroPensado);
-  //   var tentativaAtual = 3;
-
-  //   var chute = parseInt(prompt("Digite um número"));
-
-  //   if (chute == numeroPensado) {
-  //     alert("Parabéns, você acertou!");
-  //   } 
-  //   else {
-  //     tentativaAtual = tentativaAtual - 1;
-  //     alert("Não foi desta vez. Tentativas restantes: " + tentativaAtual);
-  //     chute = parseInt(prompt("Digite um número"));
-  //     if (chute == numeroPensado) {
-  //       alert("Parabéns, você acertou!");
-  //     }
-  //     else {
-  //       tentativaAtual = tentativaAtual - 1;
-  //       alert("Não foi desta vez. Tentativas restantes: " + tentativaAtual);
-  //       chute = parseInt(prompt("Digite um número"));
-  //       if (chute == numeroPensado) {
-  //         alert("Parabéns, você acertou!");
-  //       } 
-  //       else {
-  //         alert("Game Over! O número pensado era " + numeroPensado);
-  //       }
-  //     }  
-  //   }  
-  // }
-  
-
-  // function adivinha() {
-  //   var tentativas = 3;
-  //   var numSorteado = Math.round(Math.random() * 10);
-  //   console.log(numSorteado);
-
-  //   var input = document.getElementById("input-envio");
-  //   if (input.value == numSorteado) {
-  //     alert("Parabéns, você acertou!");
-  //   } 
-
-  //   else if (input.value < numSorteado) {
-  //     alert("Chute um número mais alto. Tentativas restantes: " + tentativas);
-  //     input = document.querySelector("#input-envio");
-  //   }
-
-  //   else if (input.value > numSorteado){
-  //     alert("Chute um número mais baixo. Tentativas restantes: " + tentativas);
-  //   }
-
-  //   alert("O número pensado era " + numSorteado);
-  //   input.focus();
-  //   input.value = "";
-  // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const inputEnvio = document.getElementById("inputEnvio");
-  inputEnvio.addEventListener('click', function (e){
-    e.preventDefault();
-  });
-  
-  function adivinha() {
-    var tentativas = 3;
-    var numSorteado = Math.round(Math.random() * 3);
-    console.log(numSorteado);
-    var input = document.getElementById("inputEnvio");
-
-    if (input.value == numSorteado) {
-      alert("Parabéns, você acertou!");
-    } 
-    else if (input.value < numSorteado) {
-      tentativas--;
-      alert("Chute um número mais alto. Tentativas restantes: " + tentativas);
-      return adivinha2();
-    }
-    else if (input.value > numSorteado){
-      tentativas--;
-      return adivinha3();
-    }
-    alert("O número pensado era " + numSorteado);
-    input.focus();
-    input.value = "";
-  }
-
-  function adivinha2() {
-    var tentativas = 2;
-    var numSorteado = Math.round(Math.random() * 10);
-    console.log(numSorteado);
-    var input = document.getElementById("inputEnvio");
-
-    while (tentativas >= 0) {
-      if (input.value == numSorteado) {
-        alert("Parabéns, você acertou!");
-      } 
-      else if (input.value < numSorteado) {
-        tentativas--;
-        alert("Chute um número mais alto. Tentativas restantes: " + tentativas);
-        input = document.querySelector("#inputEnvio");
-      }
-      else if (input.value > numSorteado){
-        tentativas--;
-        alert("Chute um número mais baixo. Tentativas restantes: " + tentativas);
-      }
-      alert("O número pensado era " + numSorteado);
-      input.focus();
-      input.value = "";
-    }
-  }
-
-  function adivinha3() {
-    var tentativas = 1;
-    var numSorteado = Math.round(Math.random() * 10);
-    console.log(numSorteado);
-    var input = document.getElementById("inputEnvio");
-
-    while (tentativas >= 0) {
-      if (input.value == numSorteado) {
-        alert("Parabéns, você acertou!");
-      } 
-      else if (input.value < numSorteado) {
-        tentativas--;
-        alert("Chute um número mais alto. Tentativas restantes: " + tentativas);
-        input = document.querySelector("#inputEnvio");
-      }
-      else if (input.value > numSorteado){
-        tentativas--;
-        alert("Chute um número mais baixo. Tentativas restantes: " + tentativas);
-      }
-      alert("O número pensado era " + numSorteado);
-      input.focus();
-      input.value = "";
-    }
-  }
-    
-  */

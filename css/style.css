@@ -9,7 +9,6 @@ body {
 .img-titulo {
 	width: 85px;
 	height: 85px;
-	display: inline-block;
 }
 
 h1 {
@@ -19,8 +18,17 @@ h1 {
 .largura {
 	max-width: 18rem;
 	border-color: 	#1C1C1C;
+	/*object-fit: cover;*/
+	/*max-height: 300px;*/
 }
 
 .img-jogos {
-	object-fit: cover;
+	/*object-fit: cover;*/
+	max-height: 250px;
+	object-position: 0 100%;
 }
+
+#footer {
+	background-color: #1C1C1C!important;
+}
+

@@ -5,25 +5,23 @@ body {
 }
 
 .meu-navbar {
-	padding-right: 30px;
-	padding-left: 30px;
 	background-color: #1C1C1C;
 }
 
-.nav-hover:hover {
+/*.nav-hover:hover {
    background-color: 	#1C1C1C;
-}
+}*/
 
-.dropdown-item.active, .dropdown-item:active {
-    color: #fff;
-    text-decoration: none;
-    background-color: 	#1C1C1C;
+/*.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: 	#1C1C1C;
 }
 
 .padding-lista-navbar {
 	padding-right: 10px;
 	padding-left: 10px;
-}
+}*/
 
 .titulo-subtitulo {
 	padding: 20px 0;
@@ -55,8 +53,11 @@ h1 {
 	color: white;
 	text-align: center;
 	border-color: black;
+	border-radius: 5px;
+	outline: none;
 }
 
-.hideteste {
-
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
 }
